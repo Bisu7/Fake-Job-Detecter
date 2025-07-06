@@ -5,9 +5,10 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+import os
 
-# Load the saved model
-with open('fake_job_model.pkl', 'rb') as f:
+file_path = os.path.join(os.path.dirname(__file__), "fake_job_model.pkl")
+with open(file_path, 'rb') as f:
     model_data = pickle.load(f)
 
 nb_classifier = model_data['nb_classifier']
